@@ -7,9 +7,8 @@ KET
 Set-Location C:\PS1
 
 #Powershell Logging
-Start-Transcript C:\PS1\PSLogs\log$YYYYMMDD.log -Append -Force
-function Close-Powershell { if ($Error.Count -gt 0) { $Error | Out-File c:\PS1\PSLogs\errors$YYYYMMDD.log -Append } Stop-Transcript exit
-}
+Start-Transcript C:\PS1\PSLogs\log$(get-date -format 'MMddyyyy').log -Append
+
 
 #UI Modification
 $host.ui.RawUI.WindowTitle = "($env:userdomain\$env:username) Windows PowerShell"
